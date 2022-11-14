@@ -8,18 +8,31 @@ import { AppComponent } from './app.component';
 import { ComponentHomeComponent } from './component-home/component-home.component';
 import { ComponentAboutComponent } from './component-about/component-about.component';
 
+import { WebServicesService } from './_services/web-services.service';
+import { NewcomunitiComponent } from './newcomuniti/newcomuniti.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavComponent } from './nav/nav.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ComponentHomeComponent,
-    ComponentAboutComponent
+    ComponentAboutComponent,
+    NewcomunitiComponent,
+    NavComponent,
+  
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
+
   ],
-  providers: [],
+  providers: [WebServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
