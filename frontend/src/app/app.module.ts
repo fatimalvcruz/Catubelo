@@ -12,6 +12,8 @@ import { WebServicesService } from './_services/web-services.service';
 import { NewcomunitiComponent } from './newcomuniti/newcomuniti.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { ListcomunityComponent } from './listcomunity/listcomunity.component';
 
 
 
@@ -22,6 +24,8 @@ import { NavComponent } from './nav/nav.component';
     ComponentAboutComponent,
     NewcomunitiComponent,
     NavComponent,
+    FooterComponent,
+    ListcomunityComponent,
   
   ],
   imports: [

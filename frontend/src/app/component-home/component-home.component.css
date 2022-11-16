@@ -1,0 +1,29 @@
+
+.card{
+    border-color: #fff;
+    margin-top: 20px;
+  
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active
+
+
+ {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    box-shadow: none;
+}
+
+
+
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid black;
+
+
+
+}
