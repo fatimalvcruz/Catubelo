@@ -1,5 +1,4 @@
-import { Component, OnInit} from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 
 
@@ -10,12 +9,17 @@ import { Component, OnInit} from '@angular/core';
 })
 export class ComponentAboutComponent implements OnInit {
 
-  constructor(
 
+
+
+  constructor(
+   
     ) {
   }
 
   ngOnInit() {
+
+   
 
   
     }

@@ -3,7 +3,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { WebServicesService } from '../_services/web-services.service';
 
-const STATE_KEY_FILMS = makeStateKey('newComu');
+const STATE_KEY_FILMS = makeStateKey('comu');
 
 @Component({
   selector: 'app-listcomunity',
@@ -12,7 +12,7 @@ const STATE_KEY_FILMS = makeStateKey('newComu');
 })
 export class ListcomunityComponent implements OnInit {
 
-  newComu: any;
+comu: any;
 
   constructor(private state: TransferState,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -21,7 +21,7 @@ export class ListcomunityComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.newComu = this.state.get(STATE_KEY_FILMS, <any> []);
+    this.comu = this.state.get(STATE_KEY_FILMS, <any> []);
 
    
     if(isPlatformServer(this.platformId)){
@@ -29,6 +29,7 @@ export class ListcomunityComponent implements OnInit {
       this.webServices.getNewComunidad().subscribe({
         next:(respuesta:any) => {
           this.state.set(STATE_KEY_FILMS, <any> respuesta);
+          console.log(this.comu);
         }
       });
       }

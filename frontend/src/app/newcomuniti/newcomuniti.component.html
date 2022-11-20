@@ -2,18 +2,18 @@
 <div class="container pt-3">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-            <form action="">
+            
                 <div class="form-group tex">
                     <label for="text">Calle</label>
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control" id="calle" [(ngModel)]="comucat.calle" >
                 </div>
                 <div class="form-group tex">
                     <label class="control-label" for="text">Código Postal</label>
-                    <input type="text" class="form-control" id="cp">
+                    <input type="text" class="form-control" id="cp" [(ngModel)]="comucat.cp">
                 </div>
                 <div class="form-group tex">
                     <label for="text">Número de gatos (Si es posible)</label>
-                    <input type="text" class="form-control" id="ng">
+                    <input type="text" class="form-control" id="ng" [(ngModel)]="comucat.ng">
                 </div>
                 <div class="form-group tex">
                     <span class="form-group">¿Están alimentados?</span>
@@ -38,8 +38,8 @@
 
     
 
-            <button type="submit" class=" mt-3 btn btn-secondary btn-block">Submit</button>
-        </form>
+            <button type="submit" class=" mt-3 btn btn-secondary btn-block" (click)="post()">Submit</button>
+
 
 
 

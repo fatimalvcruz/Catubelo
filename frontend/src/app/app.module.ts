@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ListcomunityComponent } from './listcomunity/listcomunity.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -33,6 +34,7 @@ import { ListcomunityComponent } from './listcomunity/listcomunity.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule
 
 
   ],
