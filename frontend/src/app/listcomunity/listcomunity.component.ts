@@ -20,18 +20,14 @@ comu: any;
     private webServices: WebServicesService) { }
 
   ngOnInit(): void {
-
-    this.comu = this.state.get(STATE_KEY_FILMS, <any> []);
-
-   
-    if(isPlatformServer(this.platformId)){
-     // this.http.get(this.url).subscribe({
-      this.webServices.getNewComunidad().subscribe({
-        next:(respuesta:any) => {
-          this.state.set(STATE_KEY_FILMS, <any> respuesta);
-          console.log(this.comu);
-        }
-      });
+     this.comu = this.state.get(STATE_KEY_FILMS, <any> []);
+     if(isPlatformServer(this.platformId)){
+     this.webServices.getNewComunidad().subscribe({
+      next:(respuesta:any) => {
+         this.state.set(STATE_KEY_FILMS, <any> respuesta);
+     
+         }
+       });
       }
   }
 

@@ -14,9 +14,9 @@ const corsOp = {
 
 
 const comuCats = [
-    {_id:'12585', coordenadas:'lo que sea'  },
-    {_id:'12558', coordenadas:'otro lo que sea'  },
-    { _id:'125698', coordenadas:'Este es otro' } 
+    {_id:'12585', calle:'lo que sea', cp: ' el 8', ng:'7'  },
+    {_id:'12558', calle:'sal ', cp: ' el 8', ng:'7' },
+    { _id:'125698', calle:'entra', cp: ' el 8', ng:'7' } 
 ]
 
 app.use(bp.json());
