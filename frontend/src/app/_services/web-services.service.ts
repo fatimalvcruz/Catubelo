@@ -8,32 +8,24 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 
-
-
 export class WebServicesService {
 
 
-  comu: any;
-
-  // url: string = 'http://localhost:1234/api/comuCats';
-
   APIURL = 'http://localhost:1234/api';
 
+  respuesta:any;
+
   constructor(private http: HttpClient)
-  
-   { }
+   { 
+   }
 
     getNewComunidad(){
-
-       return this.http.get(this.APIURL + '/comuCats');
+       return this.http.get(this.APIURL + '/comucats');
   
     }
 
-    postNewComu(_comucat:any){
-      return this.http.post(this.APIURL + '/comucat', _comucat);
-  
+    postNewComu(_newComucat: {calle:string, cp:string, ng:string}){
+      return this.http.post(this.APIURL + '/comucat', _newComucat);
     }
-      
-
 
 }

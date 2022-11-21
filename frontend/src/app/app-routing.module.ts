@@ -11,9 +11,8 @@ const routes: Routes = [
   { path: 'about', component: ComponentAboutComponent}, 
   { path: 'newcomuniti', component: NewcomunitiComponent},
   { path: 'listcomunity', component: ListcomunityComponent},  
+  { path: '**' , redirectTo: 'home', pathMatch: 'full'}
 
-
-  { path: '' , redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

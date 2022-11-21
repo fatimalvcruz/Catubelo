@@ -1,6 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 const bp = require('body-parser');
+const mongodb = require('mongodb');
+
+
+const uri = 'mongodb+srv://fatimauserdb: v5d6W5t6bijQc3BD @cluster0.mhcsgrc.mongodb.net/?retryWrites=true&w=majority';
+
+// mongodb.MongoClient.connet(uri, {useUnifiedTopology: true}, function(err, data){
+//     if(err)throw err;
+//     let db = data.db('catubelos');
+//     db.collection('nuevaComunidad').find({}).toArray(function(err, result){
+//        nuevaComunidad = result;
+//     })
+// });
+
 
 
 
@@ -22,13 +35,15 @@ const comuCats = [
 app.use(bp.json());
 const api = express.Router();
 
+api.use(cors());
+
 api.get('/comuCats', cors(corsOp),(req, res)=>{
     res.json(comuCats);
 });
 
 api.post('/comuCat', cors(corsOp),(req, res)=>{
     comuCats.push(req.body);
-    res.sendStatus(200);
+    res.json(req.body);
 });
 
 app.use('/api', api);

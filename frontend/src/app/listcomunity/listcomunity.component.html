@@ -1,5 +1,5 @@
 
-<div class="container card">
+<!-- <div class="container card">
         <div class="row justify-content-center">
             <div class="col col-md-4">
                 <div class=" text-center ">
@@ -14,12 +14,58 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-      
-        </div>
-
- 
+        </div>      
+</div> -->
 
 
   
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class=" card ">
+                <div class="card-body text-center">
+                    <span class="mx-auto fw-bolder fs-5 text-center">Listado de comunidades</span>
+                    <a class="btn btn-secondary btn-block float-end mb-5" href="/newcomuniti">Nueva Comunidad</a>
+    
+                    <table class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Calle</th>
+                            <th scope="col">CP</th>
+                            <th scope="col">Número de gatos</th>
+                            <th scope="col">Coordenadas</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Calle Sal si puedes</th>
+                            <td>29017</td>
+                            <td>7 gatos</td>
+                            <td>sadfasfsaf</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i class="fa-solid fa-trash"></i>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Calle Sal si puedes</th>
+                            <td>29017</td>
+                            <td>7 gatos</td>
+                            <td>sadfasfsaf</td>
+                            <td>
+                                <i class="fa-solid fa-pen-to-square text-primary"></i>
+                                <i class="fa-solid fa-trash"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <ul *ngFor="let co of comu">
+                        <li>Calle: {{co.calle}}</li>
+                        <li>{{co.cp}}</li>
+                        <li>{{co.ng}}</li>
+                    </ul>  
+
+                </div>
+            </div>
+        </div>
+    </div>  
