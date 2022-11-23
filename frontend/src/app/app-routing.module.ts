@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'home', component: ComponentHomeComponent},
   { path: 'about', component: ComponentAboutComponent}, 
   { path: 'newcomuniti', component: NewcomunitiComponent},
+  { path: 'editar-comunidad/:id', component: NewcomunitiComponent},
   { path: 'listcomunity', component: ListcomunityComponent},  
   { path: '**' , redirectTo: 'home', pathMatch: 'full'}
 

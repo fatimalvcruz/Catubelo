@@ -3,6 +3,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { WebServicesService } from '../_services/web-services.service';
 import { NewcomunitiComponent } from '../newcomuniti/newcomuniti.component';
+import { Comunity } from '../models/comunity';
 
 const STATE_KEY_CAT = makeStateKey('comu');
 
@@ -14,16 +15,48 @@ const STATE_KEY_CAT = makeStateKey('comu');
 export class ListcomunityComponent implements OnInit {
   
 
-comu: any;
+listcomunidad: Comunity[] = [];
 
   constructor(private state: TransferState,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(APP_ID) private appId: string,
-    private webServices: WebServicesService) { 
+    private webServices: WebServicesService,
+    ) { 
     
     }
 
+    obtenerComunidades(){
+      this.webServices.getComunidades().subscribe(data =>{
+        console.log(data);
+        this.listcomunidad = data;
+
+      }, error => {
+
+        console.log(error);
+
+      });
+    }
+
+    eliminarComunidad(id:any){
+      this.webServices.eliminarComunidad(id).subscribe(data =>{
+        this.obtenerComunidades();
+      },error =>{
+        console.log(error)
+      } )
+
+    }
+
+
+
   ngOnInit(): void {
+    this.obtenerComunidades();
+
+  }
+
+}
+
+
+
     //  this.comu = this.state.get(STATE_KEY_CAT, <any> []);
     //  let da = this.comu;
     //  if(isPlatformServer(this.platformId)){
@@ -36,6 +69,3 @@ comu: any;
     //    });
 
     //   }
-  }
-
-}

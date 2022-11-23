@@ -4,7 +4,7 @@ import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { WebServicesService } from '../_services/web-services.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Comunity } from '../models/comunity';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -20,6 +20,8 @@ const STATE_KEY_NEW_COMU = makeStateKey('newComunityForm');
 export class NewcomunitiComponent implements OnInit {
 
   newComunityForm: FormGroup;
+  titulo = 'Crear Comunidad';
+  id:string | null;
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +30,7 @@ export class NewcomunitiComponent implements OnInit {
     @Inject(APP_ID) private appId: string,
     private webServices: WebServicesService,
     private router:Router,
-   
+    private aRouter: ActivatedRoute
     ) 
     
     { 
@@ -37,13 +39,13 @@ export class NewcomunitiComponent implements OnInit {
         cp:[''],
         ng:[''],
         coordenadas:[''],
-
       })
+      this.id = this.aRouter.snapshot.paramMap.get('id');
     }
   
   ngOnInit(): void {
+    this.esEditar();
   }
-
 
 
   addNewComunity(){
@@ -53,9 +55,47 @@ export class NewcomunitiComponent implements OnInit {
         ng: this.newComunityForm.get('ng')?.value, 
         coordenadas: this.newComunityForm.get('coordenadas')?.value,
       }
-   
+
+      if(this.id !==null){
+        //editamos
+        this.webServices.editarComunidad(this.id, COMUNITY).subscribe(data =>{
+          this.router.navigate(['/']);
+
+        }, error =>{
+          console.log(error);
+          this.newComunityForm.reset();
+          
+        })
+        
+
+      }else{
+        //Agregamos
+        console.log(COMUNITY);
+        this.webServices.guardarComunidad(COMUNITY).subscribe(data =>{
+         this.router.navigate(['/']);
+        }, error => {
+         console.log(error);
+         this.newComunityForm.reset();
+        })
+      }
+
       
-    this.router.navigate(['/'])
+  }
+
+  esEditar(){
+    if(this.id !== null){
+      this.titulo= 'Editar Comunidad';
+      this.webServices.obtenerComunidad(this.id).subscribe(data =>{
+        this.newComunityForm.setValue({
+          calle: data.calle,
+        cp: data.cp,
+        ng: data.ng,
+        coordenadas:data.coordenadas
+        })
+      })
+    }
+
+
   }
   
 }

@@ -26,3 +26,60 @@ exports.obtenerComunidades = async (req, res) =>{
         
     }
 }
+
+exports.actualizarComunidades = async(req, res) =>{
+    try {
+        const {calle, cp, ng, coordenadas} = req.body;
+        let comunidad = await Comunidad.findById(req.params.id);
+        if(!comunidad) {
+            res.status(404).json({msh: 'No existe esta comunidad'})
+        }
+        comunidad.calle = calle;
+        comunidad.cp = calle;
+        comunidad.ng = calle;
+        comunidad.coordenadas = calle;
+
+        comunidad = await Comunidad.findOneAndUpdate({_id:req.params.id},comunidad, {new: true} )
+        res.json(comunidad);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(' Error') 
+        
+    }
+}
+exports.obtenerComunidad = async(req, res) =>{
+    try {
+  
+        let comunidad = await Comunidad.findById(req.params.id);
+        if(!comunidad) {
+            res.status(404).json({msh: 'No existe esta comunidad'})
+        }
+       
+        res.json(comunidad);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(' Error') 
+        
+    }
+}
+
+exports.eliminarComunidad = async(req, res) =>{
+    try {
+  
+        let comunidad = await Comunidad.findById(req.params.id);
+        if(!comunidad) {
+            res.status(404).json({msh: 'No existe esta comunidad'})
+        }
+
+        await Comunidad.findOneAndRemove({_id:req.params.id})
+       
+        res.json({msg: 'Producto eliminado con exito'});
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(' Error') 
+        
+    }
+}
