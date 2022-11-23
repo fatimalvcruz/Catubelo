@@ -24,18 +24,18 @@ comu: any;
     }
 
   ngOnInit(): void {
-     this.comu = this.state.get(STATE_KEY_CAT, <any> []);
-     let da = this.comu;
-     if(isPlatformServer(this.platformId)){
+    //  this.comu = this.state.get(STATE_KEY_CAT, <any> []);
+    //  let da = this.comu;
+    //  if(isPlatformServer(this.platformId)){
 
-       this.webServices.getNewComunidad().subscribe({
-      next:(respuesta:any) => {
-         this.state.set(STATE_KEY_CAT, <any> respuesta);
+    //    this.webServices.getNewComunidad().subscribe({
+    //   next:(respuesta:any) => {
+    //      this.state.set(STATE_KEY_CAT, <any> respuesta);
          
-         }
-       });
+    //      }
+    //    });
 
-      }
+    //   }
   }
 
 }

@@ -4,8 +4,8 @@ export class Comunity {
         calle: string;
         coordenadas:string;
         cp: string;
-        ng:number;
-    constructor(calle:string, cp:string, ng:number, coordenadas:string){
+        ng:string;
+    constructor(calle:string, cp:string, ng:string, coordenadas:string){
         this.calle = calle;
         this.cp = cp;
         this.ng = ng;
