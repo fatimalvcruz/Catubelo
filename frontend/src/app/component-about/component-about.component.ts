@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-component-about',
   templateUrl: './component-about.component.html',
@@ -9,19 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentAboutComponent implements OnInit {
 
-
-
-
-  constructor(
-   
-    ) {
-  }
+  constructor() {}
 
   ngOnInit() {
-
-   
-
-  
     }
         
   }

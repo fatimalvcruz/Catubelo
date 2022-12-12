@@ -8,8 +8,8 @@ const comununidadController = require('../controllers/comunidadController');
 router.post('/', comununidadController.crearComunidad);
 router.get('/', comununidadController.obtenerComunidades);
 router.put('/:id', comununidadController.actualizarComunidades);
-router.put('/:id', comununidadController.actualizarComunidades);
 router.get('/:id', comununidadController.obtenerComunidad);
 router.delete('/:id', comununidadController.eliminarComunidad);
+router.get('/cp/:cp',comununidadController.filtrarComunidadesCp)
  
 module.exports = router;

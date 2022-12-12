@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,   } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-component-home',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-home.component.css']
 })
 export class ComponentHomeComponent implements OnInit {
+  cp:string | null | undefined;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute , private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  goCcp(){
+    this.router.navigate(['/listcomunity', this.cp]).then(() => {
+      window.location.reload();
+    });
+    
   }
-
 }

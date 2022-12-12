@@ -24,3 +24,6 @@
     box-shadow: none;
     border: 1px solid black;
 }
+.modal.show {
+    display: block;
+}

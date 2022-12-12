@@ -8,7 +8,7 @@ const comunidadSchema = mongoose.Schema({
         type: String
     },  
     ng: {
-        type: String
+        type: Number
     }, 
     coordenadas: {
         type: String

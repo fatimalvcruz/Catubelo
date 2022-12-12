@@ -35,9 +35,9 @@ exports.actualizarComunidades = async(req, res) =>{
             res.status(404).json({msh: 'No existe esta comunidad'})
         }
         comunidad.calle = calle;
-        comunidad.cp = calle;
-        comunidad.ng = calle;
-        comunidad.coordenadas = calle;
+        comunidad.cp = cp;
+        comunidad.ng = ng;
+        comunidad.coordenadas = coordenadas;
 
         comunidad = await Comunidad.findOneAndUpdate({_id:req.params.id},comunidad, {new: true} )
         res.json(comunidad);
@@ -65,6 +65,23 @@ exports.obtenerComunidad = async(req, res) =>{
     }
 }
 
+exports.filtrarComunidadesCp = async(req, res) =>{
+    try {
+        let comunidad = await Comunidad.find({"cp": {$regex: new RegExp(`^${req.params.cp}`)}});
+       
+       if(!comunidad){
+        res.status(404).json({msh: 'No existe esta comunidad'})
+       }
+        res.json(comunidad);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(' Error') 
+        
+    }
+}
+
+
 exports.eliminarComunidad = async(req, res) =>{
     try {
   
@@ -74,7 +91,7 @@ exports.eliminarComunidad = async(req, res) =>{
         }
 
         await Comunidad.findOneAndRemove({_id:req.params.id})
-       
+
         res.json({msg: 'Producto eliminado con exito'});
         
     } catch (error) {
@@ -83,3 +100,5 @@ exports.eliminarComunidad = async(req, res) =>{
         
     }
 }
+
+

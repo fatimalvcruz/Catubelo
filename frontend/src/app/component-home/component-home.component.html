@@ -1,39 +1,25 @@
 
  <div class="container card">
-    <div class="row d-flex justify-content-center  pt-3">
+    <div class="row d-flex justify-content-center  pt-5">
         <div class="col-md-10  col-sm-8 ">
         <div class=" text-center ">
             <div class=" bg-white">
-                <div class="mx-auto fw-bolder fs-3 text-center">Buscador colonias de gatos en Málaga</div>
+                <div class="mx-auto fw-bolder fs-3 text-center">Buscador Colonias de gatos en Málaga</div>
             </div>
-
             <div class="row justify-content-center">
                 <div class="col col-md-4">
                     <div class=" text-center ">
-                        <div class="card-body ">
-                            <select class="form-select form-control mt-2 mb-5" aria-label="Default select example">
-                                <option selected>Introduce Código Postal</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                </select>
-                            <a href="#" class="btn btn-secondary btn-block mb-5">Buscar resultados</a>
+                        <div class="card-body " >
+                            <div>
+                                <input type="text" class=" form-control mt-2 mb-5"  [(ngModel)]="cp" placeholder="Introduce un Código Postal">
+                            </div>
+                            <a  class="btn btn-secondary btn-block"(click)="goCcp()" >Buscar resultados</a>
+                         </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
-    
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-10  col-sm-8 text-center">
-                    <div  class=" mb-5 " style="height: 400px">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d204559.5190226976!2d-4.56427424661731!3d36.764749938308725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f6698d30d151%3A0x403d278a576e680!2zTcOhbGFnYQ!5e0!3m2!1ses!2ses!4v1668612487802!5m2!1ses!2ses"
-                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-               
-                </div>
-            </div>
-           
-        </div>
         </div>
     </div>
  </div>
