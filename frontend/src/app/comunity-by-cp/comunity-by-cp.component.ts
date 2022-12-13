@@ -32,13 +32,13 @@ constructor(private route: ActivatedRoute,
       if(isPlatformServer(this.platformId)){
         this.webServices.filtrarComunidadesCp(this.cp).subscribe({
           next:(respuesta:any) => {this.state.set(STATE_KEY_CP, <any> respuesta);},
-          error:(respuesta:Response) =>{console.log('mucho error')}
+          error:(respuesta:Response) =>{console.log('Error')}
           });
        }
     }
 
     ngOnInit(): void {
     this.obtenerCpostales();
-    
+   
     }
 }
