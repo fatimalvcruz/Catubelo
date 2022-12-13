@@ -1,8 +1,7 @@
 
 .card{
     border-color: #fff;
-    margin-top: 20px;
-  
+
 }
 
 .btn-secondary,
@@ -18,12 +17,12 @@
 }
 
 
-
-
 .form-control:focus{
     box-shadow: none;
     border: 1px solid black;
+}
 
+@media only screen and (max-width: 990px){
 
 
 }

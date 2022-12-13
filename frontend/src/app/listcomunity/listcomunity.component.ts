@@ -22,8 +22,7 @@ mensajeModal: String = "";
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(APP_ID) private appId: string,
     private webServices: WebServicesService,
-    private router: Router,
-
+    private router: Router
     ) { }
 
     obtenerComunidades(){

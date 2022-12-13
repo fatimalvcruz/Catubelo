@@ -7,6 +7,7 @@ import { WebServicesService } from '../_services/web-services.service';
 
 const STATE_KEY_CP = makeStateKey('cpComunidades');
 
+
 @Component({
   selector: 'app-comunity-by-cp',
   templateUrl: './comunity-by-cp.component.html',
@@ -15,13 +16,15 @@ const STATE_KEY_CP = makeStateKey('cpComunidades');
 export class ComunityByCpComponent implements OnInit {
   cp: any;
   cpComunidades: Comunity[] = [];
-  
+  listcomunidad: Comunity[] = [];
+
+
 constructor(private route: ActivatedRoute,
       private state: TransferState,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(APP_ID) private appId: string,
-    private webServices: WebServicesService,
-      ) { }
+    private webServices: WebServicesService) { }
+
 
     obtenerCpostales(){
       this.cp = (this.route.snapshot.params['cp']);
@@ -36,5 +39,6 @@ constructor(private route: ActivatedRoute,
 
     ngOnInit(): void {
     this.obtenerCpostales();
+    
     }
 }

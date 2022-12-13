@@ -1,13 +1,13 @@
 .card{
     border-color: #fff;
-    margin-top: 20px;
-  
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .btn-secondary,
 .btn-secondary:focus,
 .btn-secondary:active
-
 
  {
     color: #fff;
@@ -17,18 +17,12 @@
 }
 
 
-
-
 .form-control:focus{
     box-shadow: none;
     border: 1px solid black;
-
-
-
 }
 
 .fa-solid{
     cursor: pointer;
     margin-left: 7px;
-
 }
